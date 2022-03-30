@@ -8,10 +8,9 @@ let total = document.querySelector("#total");
 let btnSpread = [...btns];
 let allBtnSpread = [...allBtns];
 
-// For Number Inputs
 btnSpread.forEach((button, i) => {
   button.addEventListener("click", () => {
-    // Inner Values for calculator
+   
 
     if (resultBox.innerHTML == "0") {
       resultBox.innerHTML = "";
@@ -28,12 +27,10 @@ btnSpread.forEach((button, i) => {
 });
 
 
-// Function to evalute Strings
 function evaluate(fn) {
     return new Function('return ' + fn)();
 }
 
-// To calculate All Input
 total.addEventListener('click', ()=> {
 let allInputs = resultBox.innerHTML;
 
@@ -42,7 +39,6 @@ resultBox.innerHTML = evaluate(allInputs);
 console.log(evaluate(allInputs));
 })
 
-// Clear all Inputs
 clearBtn.addEventListener('click', ()=> {
     resultBox.innerHTML = "0";
 })
