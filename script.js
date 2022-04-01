@@ -10,15 +10,20 @@ let allBtnSpread = [...allBtns];
 
 btnSpread.forEach((button, i) => {
   button.addEventListener("click", () => {
-   
 
-    if (resultBox.innerHTML == "0") {
+    if (resultBox.innerHTML == "0") {      
       resultBox.innerHTML = "";
     }
 
     let value = btns[i].innerHTML;
-    if (value ==" %") {      
+    if (value ==" %") {          
       resultBox.innerHTML = evaluate(resultBox.innerHTML) / 100;
+    }
+    else if(value == "."){
+      if(resultBox.innerHTML == "")
+        resultBox.innerHTML = "0"+value;
+      else
+        resultBox.innerHTML += value;
     }
     else{
 
@@ -38,11 +43,11 @@ let allInputs = resultBox.innerHTML;
 resultBox.innerHTML = evaluate(allInputs);
 
 console.log(evaluate(allInputs));
-})
+});
 
 clearBtn.addEventListener('click', ()=> {
     resultBox.innerHTML = "0";
-})
+});
 
 function del(element){
   if (resultBox.innerHTML.length == 1)
