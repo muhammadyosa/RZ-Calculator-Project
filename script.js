@@ -45,6 +45,9 @@ clearBtn.addEventListener('click', ()=> {
 })
 
 function del(element){
-  resultBox.innerHTML = resultBox.innerHTML.slice(0, -1);
+  if (resultBox.innerHTML.length == 1)
+    resultBox.innerHTML = 0;
+  else
+    resultBox.innerHTML = resultBox.innerHTML.slice(0, -1);
 }
  
