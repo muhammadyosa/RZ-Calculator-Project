@@ -17,20 +17,13 @@ btnSpread.forEach((button, i) => {
     }
 
     let value = btns[i].innerHTML;
-    if (value ==" %") {
+    if (value ==" %") {      
       resultBox.innerHTML = evaluate(resultBox.innerHTML) / 100;
     }
-    else if  (value ==" ←") {
-      resultBox.innerHTML = display.innerHTML.slice(0, -1);
-    }
-    
-    
     else{
 
-    resultBox.innerHTML += value;
-    }
-    
-    
+      resultBox.innerHTML += value;
+    }    
   });
 });
 
@@ -50,4 +43,8 @@ console.log(evaluate(allInputs));
 clearBtn.addEventListener('click', ()=> {
     resultBox.innerHTML = "0";
 })
+
+function del(element){
+  resultBox.innerHTML = resultBox.innerHTML.slice(0, -1);
+}
  
