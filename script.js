@@ -19,17 +19,9 @@ btnSpread.forEach((button, i) => {
     let value = btns[i].innerHTML;
     if (value ==" %") {
       resultBox.innerHTML = evaluate(resultBox.innerHTML) / 100;
-    }
-    else if  (value ==" ←") {
-      resultBox.innerHTML = display.innerHTML.slice(0, -1);
-    }
-    
-    
-    else{
-
+    } else{
     resultBox.innerHTML += value;
     }
-    
     
   });
 });
